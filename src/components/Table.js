@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import StarContext from '../context/StarContext';
 
 function Table() {
-  const { data } = useContext(StarContext);
+  const { data, filterByName } = useContext(StarContext);
+  const { name } = filterByName;
 
   return (
     <table>
@@ -24,7 +25,7 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        { data.map((item) => (
+        { data.filter((item) => item.name.toLowerCase().includes(name)).map((item) => (
           <tr key={ item.name }>
             <td>{item.name}</td>
             <td>{item.rotation_period}</td>

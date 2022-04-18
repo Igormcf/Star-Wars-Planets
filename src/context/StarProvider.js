@@ -5,6 +5,7 @@ import StarContext from './StarContext';
 
 function StarProvider({ children }) {
   const [data, setData] = useState([]);
+  const [filterByName, setfilterByName] = useState({ name: '' });
   const url = 'https://swapi-trybe.herokuapp.com/api/planets/';
 
   useEffect(() => {
@@ -16,8 +17,14 @@ function StarProvider({ children }) {
     getPlanets();
   }, []);
 
+  const context = {
+    data,
+    filterByName,
+    setfilterByName,
+  };
+
   return (
-    <StarContext.Provider value={ { data } }>
+    <StarContext.Provider value={ context }>
       { children }
     </StarContext.Provider>
   );
