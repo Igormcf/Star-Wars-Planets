@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import StarContext from '../context/StarContext';
 
 function Table() {
-  const { data, filterByName } = useContext(StarContext);
+  const { dataFilter, filterByName } = useContext(StarContext);
   const { name } = filterByName;
 
   return (
@@ -25,7 +25,7 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        { data
+        { dataFilter
           .filter((item) => item.name.toLowerCase().includes(name)).map((item) => (
             <tr key={ item.name }>
               <td>{item.name}</td>

@@ -3,26 +3,26 @@ import StarContext from '../context/StarContext';
 
 function Selectors() {
   const {
-    /* data, */
     filterByNumericValues,
     setFilterByNumericValues,
-    /* setDataFilter, */
+    dataFilter,
+    setDataFilter,
   } = useContext(StarContext);
-  /* const { column, comparison, value } = filterByNumericValues[0] || '';
+  const { column, comparison, value } = filterByNumericValues[0] || '';
   const numValue = Number(value);
 
-  const tableFilterData = () => data.filter((item) => {
+  const tableFilterData = () => dataFilter.filter((item) => {
     if (numValue || numValue === 0) {
       if (comparison.includes('maior que')) {
-        return item[column] > numValue;
+        return (Number(item[column]) > numValue);
       }
       if (comparison.includes('menor que')) {
-        return item[column] < numValue;
+        return Number(item[column]) < numValue;
       }
-      return item[column] === numValue;
+      return Number(item[column]) === numValue;
     }
     return item;
-  }); */
+  });
 
   return (
     <div>
@@ -69,6 +69,7 @@ function Selectors() {
         </option>
       </select>
       <input
+        value={ value }
         type="number"
         data-testid="value-filter"
         onChange={ (e) => setFilterByNumericValues([{
@@ -80,7 +81,7 @@ function Selectors() {
       <button
         type="button"
         data-testid="button-filter"
-        /* onClick={ setDataFilter(() => tableFilterData()) } */
+        onClick={ () => setDataFilter(() => tableFilterData()) }
       >
         Filter
       </button>

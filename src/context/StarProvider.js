@@ -7,8 +7,8 @@ function StarProvider({ children }) {
   const [data, setData] = useState([]);
   const [filterByName, setfilterByName] = useState({ name: '' });
   const [filterByNumericValues, setFilterByNumericValues] = useState([{
-    column: '',
-    comparison: '',
+    column: 'population',
+    comparison: 'maior que',
     value: 0,
   }]);
   const [dataFilter, setDataFilter] = useState([]);
@@ -19,6 +19,7 @@ function StarProvider({ children }) {
     const getPlanets = async () => {
       const response = await fetch(url);
       const { results } = await response.json();
+      setDataFilter(results);
       setData(results);
     };
     getPlanets();
