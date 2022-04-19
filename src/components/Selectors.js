@@ -8,7 +8,7 @@ function Selectors() {
     dataFilter,
     setDataFilter,
   } = useContext(StarContext);
-  const { column, comparison, value } = filterByNumericValues[0] || '';
+  const { column, comparison, value } = filterByNumericValues[0];
   const numValue = Number(value);
 
   const tableFilterData = () => dataFilter.filter((item) => {
