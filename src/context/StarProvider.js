@@ -12,6 +12,14 @@ function StarProvider({ children }) {
     value: 0,
   }]);
   const [dataFilter, setDataFilter] = useState([]);
+  const array = ['population', 'diameter',
+    'rotation_period', 'orbital_period', 'surface_water'];
+  const [columnList, setColumnList] = useState(array);
+
+  /* const editeColumns = (param) => {
+    const editedColumns = array.filter((item) => item !== param);
+    setColumnList(editedColumns);
+  }; */
 
   const url = 'https://swapi-trybe.herokuapp.com/api/planets/';
 
@@ -33,6 +41,8 @@ function StarProvider({ children }) {
     setFilterByNumericValues,
     dataFilter,
     setDataFilter,
+    setColumnList,
+    columnList,
   };
 
   return (

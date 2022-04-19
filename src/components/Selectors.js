@@ -7,6 +7,8 @@ function Selectors() {
     setFilterByNumericValues,
     dataFilter,
     setDataFilter,
+    columnList,
+    setColumnList,
   } = useContext(StarContext);
   const { column, comparison, value } = filterByNumericValues[0];
   const numValue = Number(value);
@@ -34,21 +36,11 @@ function Selectors() {
         }]) }
         name="column"
       >
-        <option value="population">
-          population
-        </option>
-        <option value="orbital_period">
-          orbital_period
-        </option>
-        <option value="diameter">
-          diameter
-        </option>
-        <option value="rotation_period">
-          rotation_period
-        </option>
-        <option value="surface_water">
-          surface_water
-        </option>
+        {
+          columnList.map((item, index) => (
+            <option key={ index } value={ item }>{item}</option>
+          ))
+        }
       </select>
       <select
         data-testid="comparison-filter"
@@ -81,7 +73,10 @@ function Selectors() {
       <button
         type="button"
         data-testid="button-filter"
-        onClick={ () => setDataFilter(() => tableFilterData()) }
+        onClick={ () => {
+          setDataFilter(() => tableFilterData());
+          setColumnList((prevState) => prevState.filter((item) => item !== column));
+        } }
       >
         Filter
       </button>
