@@ -3,15 +3,20 @@ import StarContext from '../context/StarContext';
 
 function Selectors() {
   const {
+    data,
     filterByNumericValues,
     setFilterByNumericValues,
     dataFilter,
     setDataFilter,
     columnList,
     setColumnList,
+    newFilterValues,
+    setNewFilterValues,
   } = useContext(StarContext);
   const { column, comparison, value } = filterByNumericValues[0];
   const numValue = Number(value);
+  const newArray = ['population', 'diameter',
+    'rotation_period', 'orbital_period', 'surface_water'];
 
   const tableFilterData = () => dataFilter.filter((item) => {
     if (numValue || numValue === 0) {
@@ -26,6 +31,28 @@ function Selectors() {
     return item;
   });
 
+  function deleteFilter(paramFilter) {
+    const listFilter = newFilterValues.filter((item) => item.column !== paramFilter);
+    setNewFilterValues(listFilter);
+    setColumnList([...columnList, paramFilter]);
+    if (newFilterValues.length === 1) {
+      setDataFilter(data);
+    }
+    if (newFilterValues.length > 1) {
+      const newDataFilter = data
+        .filter((item) => item !== dataFilter);
+      setDataFilter(newDataFilter);
+    }
+  }
+
+  function deleteAllFilters() {
+    setNewFilterValues([]);
+    setColumnList(newArray);
+    if (newFilterValues.length > 0) {
+      setDataFilter(data);
+    }
+  }
+
   return (
     <div>
       <select
@@ -37,8 +64,8 @@ function Selectors() {
         name="column"
       >
         {
-          columnList.map((item, index) => (
-            <option key={ index } value={ item }>{item}</option>
+          columnList.map((item) => (
+            <option key={ item } value={ item }>{ item }</option>
           ))
         }
       </select>
@@ -76,9 +103,37 @@ function Selectors() {
         onClick={ () => {
           setDataFilter(() => tableFilterData());
           setColumnList((prevState) => prevState.filter((item) => item !== column));
+          setNewFilterValues((prevState) => [...prevState, filterByNumericValues[0]]);
         } }
       >
         Filter
+      </button>
+      {
+        newFilterValues.length > 0
+        && (
+          <ul>
+            {
+              newFilterValues.map((item) => (
+                <li data-testid="filter" key={ item.column }>
+                  { item.column }
+                  <button
+                    type="button"
+                    onClick={ () => deleteFilter(item.column) }
+                  >
+                    X
+                  </button>
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
+      <button
+        data-testid="button-remove-filters"
+        type="button"
+        onClick={ () => deleteAllFilters() }
+      >
+        Remover todos os filtros
       </button>
     </div>
   );
