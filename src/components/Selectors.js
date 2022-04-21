@@ -12,6 +12,8 @@ function Selectors() {
     setColumnList,
     newFilterValues,
     setNewFilterValues,
+    dataAssistant,
+    setDataAssistant,
   } = useContext(StarContext);
   const { column, comparison, value } = filterByNumericValues[0];
   const numValue = Number(value);
@@ -39,9 +41,7 @@ function Selectors() {
       setDataFilter(data);
     }
     if (newFilterValues.length > 1) {
-      const newDataFilter = data
-        .filter((item) => item !== dataFilter);
-      setDataFilter(newDataFilter);
+      setDataFilter(dataAssistant);
     }
   }
 
@@ -104,6 +104,7 @@ function Selectors() {
           setDataFilter(() => tableFilterData());
           setColumnList((prevState) => prevState.filter((item) => item !== column));
           setNewFilterValues((prevState) => [...prevState, filterByNumericValues[0]]);
+          setDataAssistant(dataFilter);
         } }
       >
         Filter
