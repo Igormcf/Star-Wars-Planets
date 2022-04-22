@@ -1,16 +1,20 @@
 import React from 'react';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import StarProvider from './context/StarProvider';
-import Table from './components/Table';
-import Input from './components/Input';
-import Selectors from './components/Selectors';
+import Planets from './pages/Planets';
+import Login from './pages/Login';
+
 
 function App() {
   return (
-    <StarProvider>
-      <Input />
-      <Selectors />
-      <Table />
-    </StarProvider>
+    <BrowserRouter>
+      <StarProvider>
+        <Routes>
+          <Route exact path="/" element={ <Login /> }/>
+          <Route exact path="/planets" element={ <Planets /> }/>
+        </Routes>
+      </StarProvider>
+    </BrowserRouter>
   );
 }
 
