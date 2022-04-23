@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import logo from '../images/logo.png';
-/* import logoGif from '../images/logoGifStarWars.gif'; */
 import '../css/login.css';
+import audio from '../pages/sabre.mp3';
+import audioStarWars from '../pages/theme.mp3';
 
 function Login() {
   const [loading, setLoading] = useState(false);
@@ -11,12 +12,17 @@ function Login() {
   const handleLogin = () => {
     setTimeout(() => {
       navigate('/planets')
-    }, 5000)
+    }, 9000)
   };
 
+  let playSound = () => new Audio(audio).play();
+  
   return(
-    <div className='container-login'>
-
+    <body className='container-login'>
+   
+      <audio autoPlay preload='metadata' loop id='playAudio'>
+        <source src={ audioStarWars } type="audio/mpeg"/>
+      </audio>
      {
        !loading ? (
          <main className='main-login'>
@@ -26,7 +32,8 @@ function Login() {
             type="button"
             className='button'
             onClick={() => {
-              setLoading(true)
+              setLoading(true);
+              playSound();
               handleLogin();
             }}
           >
@@ -36,12 +43,15 @@ function Login() {
        )
        : (
          <main className='main-login'>
-           <div className='div-stars'></div>
-           <img src={ logo } alt="logoGif" id='img-logoGif-login'/>
+          <div className='div-stars'></div>
+          <img src={ logo } alt="logoGif" id='img-logoGif-login'/>
+          <audio autoPlay preload='metadata' loop id='playAudio'>
+            <source src={ audioStarWars } type="audio/mpeg"/>
+          </audio>
          </main>
        )
      }
-    </div>
+    </body>
   )
 }
 
