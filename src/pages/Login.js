@@ -15,7 +15,8 @@ function Login() {
   };
 
   return(
-    <div>
+    <div className='container-login'>
+
      {
        !loading ? (
          <main className='main-login'>
@@ -29,7 +30,7 @@ function Login() {
               handleLogin();
             }}
           >
-            START
+            PLANETS
           </button>
          </main>
        )

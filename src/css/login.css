@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: distantgalaxy;
+  font-weight: 100;
+  src: local(distantgalaxy) , url('../fonts/distantgalaxy.ttf') format('truetype');
+}
+
+.container-login {
+  cursor: url("../images/cursor01.png"), default;
+}
+
 .main-login {
   background-color: black;
   height: 100vh;
@@ -45,15 +55,15 @@
 
 /* From uiverse.io by @meermubashar */
 .button {
-  width: 140px;
-  height: 45px;
-  font-size: 23px;
-  cursor: pointer;
+  width: 260px;
+  height: 60px;
+  font-size: 40px;
+  cursor: url("../images/cursor02.png"), default;
   border: none;
   outline: none;
   background: transparent;
   color: #FFC500;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: distantgalaxy;
   font-weight: 700;
   position: relative;
   transition: all 0.5s;
@@ -80,6 +90,3 @@
   color: black;
  }
  
- .button:active:before {
-  background: #b9b9b9;
- }
