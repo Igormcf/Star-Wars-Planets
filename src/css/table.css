@@ -76,6 +76,7 @@
   justify-content: center;
   position: relative;
   height: 100vh;
+  margin-top: -70px;
 }
 
 .slider-container {

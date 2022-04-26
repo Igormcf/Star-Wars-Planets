@@ -1,0 +1,153 @@
+@font-face {
+  font-family: starjedi;
+  font-weight: lighter;
+  src: local(starjedi) , url('../fonts/Starjedi.ttf') format('truetype');
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: white;
+  background-color: rgb(60, 60, 60);
+  background-image: none;
+  font-family: starjedi;
+  cursor: url("../images/cursor01.png"), default;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgb(255, 197, 0, 0.8);
+  border-bottom: 1px solid #FFC500;
+  border-right: 1px solid #FFC500;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+}
+
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background: rgb(255, 255, 255, 0.2);
+  transition: .25s all ease;
+  pointer-events: none;
+}
+
+.select:hover::after {
+  color: #f39c12;
+}
+
+.selectors-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+  opacity: 0.5;
+}
+
+input[type=number] {
+  padding: 0 1em;
+  width: 150px;
+  color: white;
+  background-color: rgb(60, 60, 60);
+  background-image: none;
+  font-family: starjedi;
+  font-size: 1.1rem;
+  border-radius: .25em;
+  overflow: auto;
+  box-shadow: 0 5px 20px rgb(255, 197, 0, 0.8);
+  border-bottom: 1px solid #FFC500;
+  border-right: 1px solid #FFC500;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  cursor: url("../images/cursor01.png"), default;
+}
+
+.button-selectors {
+  width: 150px;
+  height: 45px;
+  font-size: 30px;
+  cursor: url("../images/cursor02.png"), default;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #FFC500;
+  font-family: distantgalaxy;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+ }
+
+.btnRemove {
+  width: 200px;
+  height: 60px;
+ }
+ 
+.button-selectors::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #FFC500;
+  z-index: -1;
+  transition: all 0.5s;
+ }
+ 
+.button-selectors:hover::before {
+  width: 100%;
+ }
+ 
+.button-selectors:hover {
+  color: black;
+ }
+
+.conatiner-body-selectors {
+  display: flex;
+  flex-direction: column;
+ }
+
+.container-filters {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: starjedi;
+  cursor: url("../images/cursor01.png"), default;
+ }
+
+.filter-div {
+  color: white;
+  padding: 0 1em;
+  background: rgb(255, 255, 255, 0.2);
+  border-radius: .25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.filter-div span {
+  margin-right: 10px;
+}

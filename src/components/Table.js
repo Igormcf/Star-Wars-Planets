@@ -43,10 +43,6 @@ function Table() {
                     <span>Terrain: { item.terrain }</span>
                     <span>Surface Water: { item.surface_water }</span>
                     <span>Population: { item.population }</span>
-                    <span>Films: { item.films }</span>
-                    <span>Created: { item.created }</span>
-                    <span>Edited: { item.edited }</span>
-                    <span>url: { item.url }</span>
                   </div>
                 </div>
               )}
