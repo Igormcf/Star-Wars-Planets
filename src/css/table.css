@@ -1,0 +1,94 @@
+@font-face {
+  font-family: starjedi;
+  font-weight: lighter;
+  src: local(starjedi) , url('../fonts/Starjedi.ttf') format('truetype');
+}
+/* From uiverse.io by @alexreyes091 */
+.card {
+  width: auto;
+  height: auto;
+  padding: 2%;
+  color: white;
+  box-shadow: 0 5px 25px rgb(255, 197, 0, 0.8);
+  background: rgb(255, 255, 255, 0.2);
+  border-bottom: 2px solid #FFC500;
+  border-right: 2px solid #FFC500;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transition-duration: 1s;
+  transition-property: border-top, 
+     border-left, 
+     border-bottom,
+     border-right,
+     box-shadow;
+ }
+ 
+ .card:hover {
+  border-top: 2px solid #FFC500;
+  border-left: 2px solid #FFC500;
+  border-bottom: 2px solid rgb(255, 212, 64);
+  border-right: 2px solid rgb(255, 212, 64);
+  box-shadow: rgba(255, 230, 144, 0.4) 5px 5px, rgba(255, 230, 144, 0.3) 10px 10px, rgba(255, 230, 144, 0.2) 15px 15px, rgba(255, 230, 144, 0.1) 20px 20px, rgba(255, 230, 144, 0.05) 25px 25px;
+ }
+ 
+ .card__content {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  font-family: starjedi;
+  justify-content: center;
+  text-align: center;
+ }
+ 
+ .right-arrow {
+   position: absolute;
+   top: 50%;
+   right: 110px;
+   font-size: 3rem;
+   color: #FFC500;
+   z-index: 10;
+   user-select: none;
+   cursor: url("../images/cursor01.png"), default;
+ }
+
+ .right-arrow:hover, .left-arrow:hover {
+   filter: drop-shadow(0 0 1rem white )
+ }
+ 
+ .right-arrow:active, .left-arrow:active {
+   color: white;
+ }
+
+ .left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 110px;
+  font-size: 3rem;
+  color: #FFC500;
+  z-index: 10;
+  user-select: none;
+  cursor: url("../images/cursor01.png"), default;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+}
+
+.slider-container {
+  max-width: 1000px;
+  position: relative;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  from {opacity: .08}
+  to {opacity: 1}
+}

@@ -2,10 +2,12 @@ import React from 'react';
 import Table from '../components/Table';
 import Input from '../components/Input';
 import Selectors from '../components/Selectors';
+import '../css/planets.css';
 
 function Planets() {
   return (
-    <div>
+    <body>
+      <div className='div-stars'></div>
       <header>
         <Input />
         <Selectors />
@@ -13,7 +15,7 @@ function Planets() {
       <main>
         <Table />
       </main>
-    </div>
+    </body>
   )
 }
 

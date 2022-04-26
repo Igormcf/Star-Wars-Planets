@@ -101,9 +101,9 @@ function Selectors() {
         type="button"
         data-testid="button-filter"
         onClick={ () => {
-          setDataFilter(() => tableFilterData());
           setColumnList((prevState) => prevState.filter((item) => item !== column));
           setNewFilterValues((prevState) => [...prevState, filterByNumericValues[0]]);
+          setDataFilter(() => tableFilterData());
           setDataAssistant(dataFilter);
         } }
       >
