@@ -67,6 +67,7 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
   padding: 0 1em;
   width: 150px;
+  height: 50px;
   color: white;
   background-color: rgb(60, 60, 60);
   background-image: none;
@@ -85,7 +86,7 @@ input[type=number] {
 .button-selectors {
   width: 150px;
   height: 45px;
-  font-size: 30px;
+  font-size: 26px;
   cursor: url("../images/cursor02.png"), default;
   border: none;
   outline: none;
@@ -139,6 +140,7 @@ input[type=number] {
 
 .filter-div {
   color: white;
+  margin-right: 7px;
   padding: 0 1em;
   background: rgb(255, 255, 255, 0.2);
   border-radius: .25em;
@@ -150,4 +152,8 @@ input[type=number] {
 
 .filter-div span {
   margin-right: 10px;
+}
+
+.img-delete {
+  color: black;
 }

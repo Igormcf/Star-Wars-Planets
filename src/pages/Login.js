@@ -19,7 +19,6 @@ function Login() {
   
   return(
     <body className='container-login'>
-   
       <audio autoPlay preload='metadata' loop id='playAudio'>
         <source src={ audioStarWars } type="audio/mpeg"/>
       </audio>

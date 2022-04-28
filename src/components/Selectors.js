@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import StarContext from '../context/StarContext';
 import '../css/selectors.css';
 import audio from '../pages/sabre.mp3';
+import { GiDeathStar } from 'react-icons/gi';
 
 function Selectors() {
   const {
@@ -144,7 +145,7 @@ function Selectors() {
                     type="button"
                     onClick={ () => deleteFilter(item.column) }
                   >
-                    X
+                    <GiDeathStar className="img-delete"/>
                   </button>
                 </div>
               ))

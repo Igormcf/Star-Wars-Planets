@@ -4,6 +4,7 @@ import { BsCaretLeftSquare, BsCaretRightSquare } from "react-icons/bs";
 import audio2 from '../pages/sabre2.mp3';
 import '../css/table.css';
 import 'animate.css';
+import starWars from '../images/starWars.gif'
 
 function Table() {
   const [current, setCurrent] = useState(0);
@@ -32,7 +33,6 @@ function Table() {
             <div className="slider-container" key={ index }>
               {index === current && (
                 <div className="card fade" key={ item.name }>
-                  <span></span>
                   <div className="card__content">
                     <span>Name: { item.name }</span>
                     <span>Rotation Period: { item.rotation_period }</span>
@@ -44,6 +44,7 @@ function Table() {
                     <span>Surface Water: { item.surface_water }</span>
                     <span>Population: { item.population }</span>
                   </div>
+                  <img src={ starWars } alt="star_wars" className="img-star-wars"/>
                 </div>
               )}
             </div>

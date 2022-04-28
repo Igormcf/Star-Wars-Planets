@@ -5,12 +5,15 @@
 }
 /* From uiverse.io by @alexreyes091 */
 .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
-  height: auto;
+  max-height: 428px;
   padding: 2%;
   color: white;
   box-shadow: 0 5px 25px rgb(255, 197, 0, 0.8);
-  background: rgb(255, 255, 255, 0.2);
+  background: none;
   border-bottom: 2px solid #FFC500;
   border-right: 2px solid #FFC500;
   border-top: 2px solid white;
@@ -33,6 +36,7 @@
  
  .card__content {
   display: flex;
+  width: auto;
   flex-direction: column;
   font-size: 1.2rem;
   font-family: starjedi;
@@ -75,13 +79,14 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 100vh;
-  margin-top: -70px;
+  margin-top: 5px;
+  height: 80vh;
 }
 
 .slider-container {
   max-width: 1000px;
   position: relative;
+  top: -50px;
 }
 
 .fade {
@@ -92,4 +97,9 @@
 @keyframes fade {
   from {opacity: .08}
   to {opacity: 1}
+}
+
+.img-star-wars {
+  height: 418px;
+  border-radius: 8px;
 }
