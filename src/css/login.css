@@ -7,7 +7,7 @@
 @font-face {
   font-family: distantgalaxy;
   font-weight: 100;
-  src: local(distantgalaxy) , url('../fonts/distantgalaxy.ttf') format('truetype');
+  src: local(distantgalaxy), url('../fonts/distantgalaxy.ttf') format('truetype');
 }
 
 .container-login {
