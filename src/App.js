@@ -6,8 +6,9 @@ import Login from './pages/Login';
 
 
 function App() {
+  document.title = 'Star Wars Planets';
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <StarProvider>
         <Routes>
           <Route exact path="/" element={ <Login /> }/>
