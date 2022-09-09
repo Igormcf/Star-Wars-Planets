@@ -10,3 +10,4 @@ Esta aplicação lista cards com informações sobre os planetas da saga de film
 
 Foi utilizado no seu desenvolvimento a linguagem JavaScript com a framework do React, bem como, Context API e Hooks no gerenciamento do estado global.
 A listagem dos planetas foi feita através de um carrossel implementado com JS. No layout da aplicação, destaque para os efeitos sonoros de sabres de luz em alguns botões e input, bem como, para a trilha sonora dos filmes em segundo plano.
+
